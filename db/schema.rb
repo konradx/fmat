@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104220720) do
+ActiveRecord::Schema.define(version: 20180104223844) do
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "tax_identificator"
+    t.string "representative"
+    t.text "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.string "reference_number"
