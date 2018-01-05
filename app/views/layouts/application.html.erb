@@ -11,8 +11,10 @@
 
   <body>
     <div class="container">
-      <%= render 'layouts/alert' %>
-    <%= yield %>
+      <div class="col-md-6 col-md-offset-3"> 
+        <%= render 'layouts/alert' %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

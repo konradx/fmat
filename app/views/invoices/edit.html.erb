@@ -3,8 +3,8 @@
   <div class="panel-heading">
     <h3 class="panel-title">Editing Invoice no: <%= @invoice.reference_number %></h3>
   </div>
-  <div class="panel-body">
   <%= simple_form_for @invoice do |f|  %>
+  <div class="panel-body">
   <%= f.input :reference_number %>
   <%= f.input :issue_date, as: :date, html5: true %>
   <%= f.input :due_date, as: :date, html5: true %>
