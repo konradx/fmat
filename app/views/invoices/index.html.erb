@@ -1,4 +1,4 @@
-<h1><%= @invoices.size %> Invoices</h1>
+<h1><%= pluralize(@invoices.size, 'Invoice') %></h1>
 
 <table class="table table-striped">
   <tr>
@@ -29,8 +29,8 @@
     <td><%= number_to_currency(invoice.gross_amount) %></td>
     <td><%= number_to_currency(invoice.paid_amount) %></td>
     <td><%= invoice.currency %></td>
-    <td><%= invoice.created_at %></td>
-    <td><%= invoice.updated_at %></td>
+    <td><%= invoice.created_at.to_s(:long) %></td>
+    <td><%= invoice.updated_at.to_s(:long) %></td>
   </tr>
 <% end %>
 </table>
