@@ -14,12 +14,12 @@ class InvoicesController < ApplicationController
   def create
     @invoice = Invoice.new(invoice_params)
     @invoice.save
-    redirect_to @invoice
+    redirect_to @invoice, notice: "Invoice succesfully created!"
   end
   def update
     @invoice = Invoice.find(params[:id])
     if @invoice.update(invoice_params)
-      redirect_to @invoice
+      redirect_to @invoice, notice: "Invoice succesfully updated!"
     else
       render :edit
     end
