@@ -8,6 +8,14 @@ class InvoicesController < ApplicationController
   def edit
     @invoice = Invoice.find(params[:id])
   end
+  def new
+    @invoice = Invoice.new
+  end
+  def create
+    @invoice = Invoice.new(invoice_params)
+    @invoice.save
+    redirect_to @invoice
+  end
   def update
     @invoice = Invoice.find(params[:id])
     if @invoice.update(invoice_params)
