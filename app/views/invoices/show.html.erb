@@ -34,5 +34,6 @@
   </tr>
 </table>
 <%= link_to 'Edit', edit_invoice_path(@invoice), class: 'button' %>
+<%= link_to 'Delete', invoice_path(@invoice), method: :delete, data: { confirm: 'Are you sure?'}, class: 'button' %>
 <%= link_to "All Invoices", invoices_path %>
 </div>

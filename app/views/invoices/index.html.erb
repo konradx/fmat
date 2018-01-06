@@ -37,6 +37,7 @@
     <td><%= invoice.created_at.to_s(:long) %></td>
     <td><%= invoice.updated_at.to_s(:long) %></td>
     <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'button' %></td>
+    <td><%= link_to 'Delete', invoice_path(invoice), method: :delete, data: { confirm: 'Are you sure?'}, class: 'button' %></td>
   </tr>
 <% end %>
 </table>

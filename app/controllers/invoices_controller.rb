@@ -24,6 +24,11 @@ class InvoicesController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @invoice = Invoice.find(params[:id])
+    @invoice.destroy
+    redirect_to invoices_path, notice: "Invoice succesfully deleted!"
+  end
 
   private
   def invoice_params
