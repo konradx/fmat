@@ -1,0 +1,17 @@
+
+  <%= simple_form_for @invoice do |f|  %>
+  <div class="panel-body">
+  <%= f.input :reference_number %>
+  <%= f.input :issue_date, as: :date, html5: true %>
+  <%= f.input :due_date, as: :date, html5: true %>
+  <%= f.input :status %>
+  <%= f.input :tax %>
+  <%= f.input :discount %>
+  <%= f.input :net_amount %>
+  <%= f.input :gross_amount %>
+  <%= f.input :paid_amount %>
+  <%= f.input :currency %>
+  </div>
+  <div class="panel-footer"><%= f.button :submit %></div>
+<% end %>
+</div>
