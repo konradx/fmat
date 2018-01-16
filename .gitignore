@@ -49,3 +49,6 @@ node_modules/
 # Ignore vim swap files
 *~
 *.sw*
+
+#Ignore MacOS Desktop Services Store
+.DS_Store
