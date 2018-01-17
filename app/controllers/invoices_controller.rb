@@ -4,6 +4,16 @@ class InvoicesController < ApplicationController
 	end
   def show
     @invoice = Invoice.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        Prawn::Document.generate("invoice_#{@invoice.reference_number}.pdf") do |pdf|
+          pdf.text "Hello invoice"
+          send_data pdf.render
+          
+        end
+      end
+    end
   end
   def edit
     @invoice = Invoice.find(params[:id])
