@@ -7,14 +7,10 @@ class InvoicesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        Prawn::Document.generate("invoice_#{@invoice.reference_number}.pdf") do |pdf|
-          pdf.text "Invoice No #{@invoice.reference_number}", size: 45, style: :bold
-          pdf.text "Issue Date: #{@invoice.issue_date}", size: 16, style: :italic
-          pdf.text "Due Date: #{@invoice.due_date}", size: 16, style: :italic
+          pdf = PdfRenderer.new(@invoice)
           send_data pdf.render, filename: "invoice-#{@invoice.reference_number}.pdf",
                                 type: "application/pdf",
                                 disposition: "inline"
-        end
       end
     end
   end
